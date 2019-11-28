@@ -49,3 +49,5 @@ Due that there is no validation in the code that checks that the length of the u
 Understanding this is possible to identify a calling function pattern: If the function chkAbsPath exist and inside a call to **realpath** happens, there is a 90% of possibility that the vulnerability exists.
 
 Due that a vendor uses to reutilise firmware code between different devices. It was really probably that the vulnerability existed in multiples devices, that is why this research happened.
+
+## More information about the impact of this kind of issues: https://packetstormsecurity.com/files/142321/HackBack-A-DIY-Guide.html
