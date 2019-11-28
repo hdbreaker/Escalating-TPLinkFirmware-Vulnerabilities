@@ -1,0 +1,9 @@
+graph ReferenceTree {
+	graph [rankdir=LR]
+	_fini [label=_fini color=blue fontcolor=white style=filled]
+	realpath [label=realpath color=red fontcolor=white style=filled]
+	_fini -- realpath [label="005527e4"]
+	chkAbsPath_bug [label=chkAbsPath_bug color=blue fontcolor=white style=filled]
+	realpath [label=realpath color=red fontcolor=white style=filled]
+	chkAbsPath_bug -- realpath [label="004eae88"]
+}

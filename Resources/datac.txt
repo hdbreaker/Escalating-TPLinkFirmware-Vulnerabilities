@@ -1,0 +1,28 @@
+undefined4 copy_subscription(void *pvParm1,void *pvParm2)
+
+{
+  pthread_mutex_lock((pthread_mutex_t *)subMutex);
+  memcpy(pvParm2,pvParm1,0xd8);
+  pthread_mutex_unlock((pthread_mutex_t *)subMutex);
+  return 1;
+}
+
+
+
+
+int http_Connect(void *pvParm1,undefined2 *puParm2)
+
+{
+  int __fd;
+  int iVar1;
+  int iVar2;
+  sa_family_t local_30;
+  ushort local_2e;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined4 local_24;
+  
+  memcpy(puParm2,pvParm1,0xc0);
+
+
+

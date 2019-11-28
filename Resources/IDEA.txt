@@ -1,0 +1,7 @@
+Ghidra pluggin que busque funciones vulnerables  como chkAbsPath y realpath
+
+Buscar buffers con tamaños fixedos para revisar
+
+Buscar por HTTPGetEnv con parametros controlados?
+
+Ghidra Headless!
