@@ -25,3 +25,6 @@ This script will create pdf files with a map of function called that identify th
 * TP-LINK WDR4900
 
 Using Zoomeye.org I was able to determinate that there is a total of **106.966 devices (aprox)** vulnerables exposed to Internet.
+
+## TODO:
+The idea of this Research is find an **Unauthenticated Remote Code Execution** vulnerability affecting a device and use this tool to escale the impact through diferent devices of the same vendor. This is in ordeer to demostrate that **conducting a reseearch over a cheap device (20 USD) an attacker can affect multiples device exposed to internet and win access from outside to the internal network of a House or a Company or create a IoT Botnet without so much effort.**
