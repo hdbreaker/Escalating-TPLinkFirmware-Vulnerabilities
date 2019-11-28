@@ -1,17 +1,17 @@
 # Escalating TPLink Firmware Vulnerabilities
-Script to search for a vulnerability patron in multiples Firmwares using Ghidra Scripting and Binwalk to extract httpd binary in an automatically way
+Script to search for a vulnerability pattern in multiples Firmwares using Ghidra Scripting and Binwalk to extract httpd binary in an automatically way
 
-This tool was designed to search for a vulnerability patron previously identified in a httpd - Web Servers Binary through multiples firmwares in an automated way.
+This tool was designed to search for a vulnerability pattern previously identified in a httpd - Web Servers Binary through multiples firmwares in an automated way.
 
-This tool can be modified to identify vulnerable patrons in different vendors firmware and also in different binaries (not only httpd) this can be done through the modification or creation of new Ghidra Scripts that define the vulnerable patron to look for.
+This tool can be modified to identify vulnerable pattern in different vendors firmware and also in different binaries (not only httpd) this can be done through the modification or creation of new Ghidra Scripts that define the vulnerable pattern to look for.
 
 ## httpd_extractor.py
 This script will extract the httpd binaries in all the firmwares stored in **Firmwares** folder and will store it into **HTTPD_Binaries** folder.
 
 ## analyzer.py
-This script will run Ghidra headless analyser in conjunction with the Script stored in **Ghidra_Scripts** folder to identify vulnerability patrons in all the HTTPD Binaries extracted by **httpd_extractor.py**
+This script will run Ghidra headless analyser in conjunction with the Script stored in **Ghidra_Scripts** folder to identify vulnerability patterns in all the HTTPD Binaries extracted by **httpd_extractor.py**
 
-This script will create pdf files with a map of functions called that identify the vulnerable patron and will store that results in the folder **Analysis_Results**
+This script will create pdf files with a map of functions called that identify the vulnerable pattern and will store that results in the folder **Analysis_Results**
 
 ### With this tool, I was able to identify that the following devices are affected by CVE-2018-16119 (Authenticated Remote Code Execution) vulnerability that I found in 2018.
 
