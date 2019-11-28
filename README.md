@@ -1,7 +1,7 @@
 # Escalating TPLink Firmware Vulnerabilities
 Script to search for a vulnerability patron in multiples Firmwares using Ghidra Scripting and Binwalk to extract httpd binary in an automatically way
 
-This tool was designed to search for a vulnerability patron previously identified in multiples httpd - Web Servers Binaries through multiples firmwares in an automated way.
+This tool was designed to search for a vulnerability patron previously identified in a httpd - Web Servers Binary through multiples firmwares in an automated way.
 
 This tool can be modified to identify vulnerable patrons in diferent vendors firmwares and also in diferent binaries (not only httpd)
 this can  be done through the modification or creation of new Ghidra Scripts that define the vulnerable patron to look for.
