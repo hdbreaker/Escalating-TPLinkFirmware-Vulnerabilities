@@ -12,7 +12,7 @@ This script will extract the httpd binaries in all the firmwares stored in **Fir
 ## analyzer.py
 This script will run Ghidra headless analyser in conjuction with the Script stored in **Ghidra_Scripts** folder to identify vulnerability patrons in all the HTTPD Binaries extracted by **httpd_extractor.py**
 
-This script will create pdf files with a map of function called that identify the vulnerable patron and will store that resuts in the folder **Analysis_Results**
+This script will create pdf files with a map of function called that identify the vulnerable patron and will store that results in the folder **Analysis_Results**
 
 ### With this tool I was able to identify that the following devices are affected by CVE-2018-16119 (Authenticated Remote Code Execution) vulnerability that I found in 2018.
 
