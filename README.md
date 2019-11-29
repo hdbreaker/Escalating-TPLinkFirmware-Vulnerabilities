@@ -53,7 +53,7 @@ Due that a vendor uses to reutilise firmware code between different devices. It 
 ## PoC:
 Thanks to these scripts, I was able to identify that the **TP-Link Archer C7 v2** is vulnerable to this exploit, at the moment to write this, I did not have that router but I found one in Hungary with the following IP: http://178.164.131.28:100
 
-![HungaryRouter](./Resources/InternetVictimHungria_PoC/DefaultCreds_Hungary.png)
+![HungaryRouter](./Resources/InternetVictimHungary_PoC/DefaultCreds_Hungary.png)
 
 The router allows access with default credentials: **admin:admin** but I wanted not only modify router settings I wanted to achive code execution in the router in order to **pivot from Internet to the Internal Network where this Hungary router is part**.
 
