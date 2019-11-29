@@ -57,30 +57,30 @@ Thanks to these scripts, I was able to identify that the **TP-Link Archer C7 v2*
 
 The router allows access with default credentials: **admin:admin** but I wanted not only modify router settings I wanted to achive code execution in the router in order to **pivot from Internet to the Internal Network where this Hungary router is part**.
 
-![HungaryRouterAccess](./Resources/InternetVictimHungria_PoC/PanelAccess.png)
+![HungaryRouterAccess](./InternetVictimHungary_PoC/PanelAccess.png)
 
 As can be seen in the above image the router has exactly the same firmware version where I identify the vulnerability.
 The vulnerability in this firmwar can be seen below:
 
-![HungaryRouterVuln](./Resources/InternetVictimHungria_PoC/ArcherC7v2_Vulnerability.png)
+![HungaryRouterVuln](./InternetVictimHungary_PoC/ArcherC7v2_Vulnerability.png)
 
 Also we can detect that the vulnerable parameter is called **shareFolderName** as can be seen below:
 
-![HungaryRouterVuln](./Resources/InternetVictimHungria_PoC/ArcherC7v2_shareFolderName_injectionPoint.png)
+![HungaryRouterVuln](./InternetVictimHungary_PoC/ArcherC7v2_shareFolderName_injectionPoint.png)
 
 In the above image the parameter **shareFolderName** is received in **line 254** and the vulnerable function **chkAbsPath** is executed in **line 274**
 
 Also we can identify that the Hungary router had the NAS functionality enable:
 
-![HungaryRouterVuln](./Resources/InternetVictimHungria_PoC/FolderSharingContentVuln.png)
+![HungaryRouterVuln](./InternetVictimHungary_PoC/FolderSharingContentVuln.png)
 
 When we create a new folder in the router:
 
-![HungaryRouterVuln](./Resources/InternetVictimHungria_PoC/createSharedFolder.png)
+![HungaryRouterVuln](./InternetVictimHungary_PoC/createSharedFolder.png)
 
 The following request was sent and we can see the controllable parameter **shareFolderName** that is used to trigger the vulnerability:
 
-![HungaryRouterVuln](./Resources/InternetVictimHungria_PoC/ArcherC7v2_Vulnerable_Request.png)
+![HungaryRouterVuln](./InternetVictimHungary_PoC/ArcherC7v2_Vulnerable_Request.png)
 
 With all this information, we can confirm the vulnerability and create the exploit to win access to the Hungary Router internal network
 
