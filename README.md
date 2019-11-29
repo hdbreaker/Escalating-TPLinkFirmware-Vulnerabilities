@@ -89,7 +89,11 @@ So I can use it to exploit to vulnerabilty or remove it and replace it with **sh
 
 **With all this information, I could confirm the vulnerability**. Before to start to rewriting my **CVE-2018-16119** exploit I decided to check if the **ROP Gadgets** that I used to exploit **TP-Link WR1043ND Router** changed in the **libuClibc-0.9.30.so** library, that is the one that contain the Gadgets to bypass the Cache Incoherency of Mipsel Architecture.
 
-By my surprice both devices share the same **libuClibc-0.9.30.so** library, so I do not need to write the ROP Chain again, I only nedded to change the exploit URL from:
+By my surprice both devices share the same **libuClibc-0.9.30.so** library as can be seen below:
+
+![HungaryLibC](./InternetVictimHungary_PoC/md5.png)
+
+Due this, I did not need to write the ROP Chain again, I only needed to change the exploit URL from:
 
 ```
 bof_url = base_url+"/"+session_id+"/userRpm/MediaServerFoldersCfgRpm.htm?displayName=bof&shareEntire="+payload+"&no_use_para_just_fix_ie_sub_bug=&Save=Save"
@@ -99,7 +103,7 @@ to
 bof_url = base_url+"/"+session_id+"/userRpm/NasFolderSharingRpm.htm?displayName=bof&shareEntire="+payload+"&no_use_para_just_fix_ie_sub_bug=&Save=Save&selPage=0&Page=1&subpage=2&no_use_para_just_fix_ie_sub_bug="
 ```
 
-And the exploit works as can be seen below:
+And obviously the target address and the reverse shell address in the Mipsel Reverse Shell then the exploit worked without  problem as can be seen below:
 
 **TODO: CREATE AND ADD EXPLOIT and add Images/Videos of exploitation and reaching internal network**
 
