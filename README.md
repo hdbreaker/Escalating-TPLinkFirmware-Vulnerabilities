@@ -67,11 +67,11 @@ The vulnerability in the Archer C7 v2 firmware can be seen below:
 
 ![HungaryRouterVuln](./InternetVictimHungary_PoC/ArcherC7v2_Vulnerability.png)
 
-Also, I was able to detect that the vulnerable parameters names: **shareFolderName** and **shareEntire** as can be seen below:
+Also, I was able to detect that the vulnerable parameter name is **shareFolderName** as can be seen below:
 
 ![HungaryRouterVuln](./InternetVictimHungary_PoC/ArcherC7v2_shareFolderName_injectionPoint.png)
 
-In the above image the parameter **shareFolderName** is received in **line 254** and the vulnerable function **chkAbsPath** is executed in **line 274**. Also if the parameter **shareFolderName** is not set (== 0x0 Line 255) the application get the variable **shareEntire** and execute the **chkAbsPath** function in line 258.
+In the above image the parameter **shareFolderName** is received in **line 254** and the vulnerable function **chkAbsPath** is executed in **line 274**. 
 
 Additionally, I could identify that the Hungary router had the NAS functionality enable:
 
@@ -81,11 +81,10 @@ When I created a new folder in the router:
 
 ![HungaryRouterVuln](./InternetVictimHungary_PoC/createSharedFolder.png)
 
-The following request was sent and the controllable parameter **shareFolderName** appeared  as part of the request:
+The following request was sent and the controllable parameter **shareFolderName** appeared as part of the request:
 
 ![HungaryRouterVuln](./InternetVictimHungary_PoC/ArcherC7v2_Vulnerable_Request.png)
 
-So I can use it to exploit to vulnerabilty or remove it and replace it with **shareEntire** 
 
 **With all this information, I could confirm the vulnerability**. Before to start to rewriting my **CVE-2018-16119** exploit I decided to check if the **ROP Gadgets** that I used to exploit **TP-Link WR1043ND Router** changed in the **libuClibc-0.9.30.so** library, that is the one that contain the Gadgets to bypass the Cache Incoherency of Mipsel Architecture.
 
@@ -100,12 +99,13 @@ bof_url = base_url+"/"+session_id+"/userRpm/MediaServerFoldersCfgRpm.htm?display
 
 to
 
-bof_url = base_url+"/"+session_id+"/userRpm/NasFolderSharingRpm.htm?displayName=bof&shareEntire="+payload+"&no_use_para_just_fix_ie_sub_bug=&Save=Save&selPage=0&Page=1&subpage=2&no_use_para_just_fix_ie_sub_bug="
+bof_url = base_url+"/"+session_id+"/userRpm/NasFolderSharingRpm.htm?displayName=bof&mediaShare=on&shareFolderName="+payload+"&Save=Save&selPage=0&Page=1&subpage=2&no_use_para_just_fix_ie_sub_bug="
 ```
 
 And obviously the target address and the reverse shell address in the Mipsel Reverse Shell then the exploit worked without  problem as can be seen below:
 
 **TODO: CREATE AND ADD EXPLOIT and add Images/Videos of exploitation and reaching internal network**
+**I Already have the Crash PoC... I crashed the Hungary device FUCK**
 
 
 ## More information about the impact of this kind of issues: https://packetstormsecurity.com/files/142321/HackBack-A-DIY-Guide.html
