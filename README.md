@@ -57,6 +57,8 @@ Thanks to these scripts, I was able to identify that the **TP-Link Archer C7 v2*
 
 The router allows access with default credentials: **admin:admin** but I wanted not only modify router settings I wanted to achive code execution in the router in order to **pivot from Internet to the Internal Network where this Hungary router is part**.
 
+![HungaryRouterAccess](./InternetVictimHungary_PoC/AdminAccess.png)
+
 ![HungaryRouterAccess](./InternetVictimHungary_PoC/PanelAccess.png)
 
 As can be seen in the above image the router has exactly the same firmware version where I identify the vulnerability.
