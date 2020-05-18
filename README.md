@@ -136,7 +136,5 @@ headers = {
 And obviously the target address into the the Mipsel Reverse Shell source code. With these little modifications the exploit worked without problem as can be seen below:
 
 **TODO: CREATE AND ADD EXPLOIT and add Images/Videos of exploitation and reaching internal network**
-**I Already have the Crash PoC... I crashed the Hungary device FUCK**
-
 
 ## More information about the impact of this kind of issues: https://packetstormsecurity.com/files/142321/HackBack-A-DIY-Guide.html
